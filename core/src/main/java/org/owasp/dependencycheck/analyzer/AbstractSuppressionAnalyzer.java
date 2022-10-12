@@ -129,7 +129,7 @@ public abstract class AbstractSuppressionAnalyzer extends AbstractAnalyzer {
     }
 
     @Override
-    protected void analyzeDependency(Dependency dependency, Engine engine) throws AnalysisException {
+    protected synchronized void analyzeDependency(Dependency dependency, Engine engine) throws AnalysisException {
         if (rules.isEmpty()) {
             return;
         }
